@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>button hover 3</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #030303;
+            width: 100%;
+        }
+        .button {
+            color: aliceblue;
+            font-weight: 600;
+            position: relative;
+            width: 180px;
+            height: 50px;
+            border: 2px solid red;
+            line-height: 45px;
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+            border-radius: 4px;
+            margin: 310px 0 0 550px;
+            cursor: pointer;
+            overflow: hidden;
+            z-index: 10;
+            transition: all .5s ease-in;
+            animation: rang 1.2s infinite linear;
+        }
+        .button:hover {
+            color: red;
+        }
+        @keyframes rang {
+            0% {
+                border: 2px solid red;
+            }
+            25% {
+                border: 2px solid blue;
+            }
+            50% {
+                border: 2px solid blueviolet;
+            }
+            75% {
+                border: 2px solid green;
+            }
+            100% {
+                border: 2px solid red;
+            }
+        }
+        .button::before {
+            position: absolute;
+            content: '';
+            width: 70%;
+            height: 100%;
+            background: #fff;
+            left: -150px;
+            transform: skew(-45deg);
+            transition: all .5s ease-in;
+            z-index: -1;
+        }
+        .button:hover::before {
+            left: -25px;
+        }
+        .button::after {
+            position: absolute;
+            content: '';
+            width: 70%;
+            height: 100%;
+            background: #fff;
+            right: -150px;
+            transform: skew(-45deg);
+            transition: all .5s ease-in;
+            z-index: -1;
+        }
+        .button:hover::after {
+            right: -25px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="button">Click me</div>
+    
+</body>
+</html>
